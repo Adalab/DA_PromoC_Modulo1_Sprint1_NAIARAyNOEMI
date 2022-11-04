@@ -52,3 +52,22 @@ REFERENCES clientes (id_clientes),
 CONSTRAINT fk_facturas_empleados
 FOREIGN KEY (id_empleado)
 REFERENCES empleados (id_empleado) );
+
+#5º MODIFICAR TABLAS
+ALTER TABLE zapatillas
+ADD COLUMN  marca VARCHAR(45) NOT NULL,
+ADD COLUMN talla INT NOT NULL ;
+
+ALTER TABLE empleados
+MODIFY COLUMN salario FLOAT NOT NULL ;
+
+ALTER TABLE clientes
+DROP COLUMN pais,
+MODIFY COLUMN codigo_postal INT ;
+
+ALTER TABLE facturas
+ADD COLUMN total FLOAT ;
+
+
+
+
