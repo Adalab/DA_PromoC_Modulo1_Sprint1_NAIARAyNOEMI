@@ -122,4 +122,20 @@ FROM categories ;
 #si estos sufrieran un retraso de 5 días. Nos piden mostrar la nueva fecha renombrada como FechaRetrasada.
 # Pista 💡 Para realizar lo anterior, busca documentación de la función DATE_ADD para MySQL.
 
+SELECT shipped_date, DATE_ADD("0000-00-00 00:00:00", INTERVAL 5 day) as fecharetasada
+FROM orders;
 
+
+#9r más beneficios parece ser el de aquellos con un precio mayor o igual a 15 dólares, pero menor o igual que 50 dólares. 
+#Selecciona los datos de ese rango de productos usando el operador BETWEEN.
+
+Select *
+FROM products
+where unit_price Between 15 and 50
+order by unit_price ASC;
+
+#10 Queremos conocer los datos de los productos que tengan exactamente un precio de 18, 19 o 20 dólares
+ 
+ SELECT *
+ FROM products
+ WHERE unit_price In ("18","19","20");
